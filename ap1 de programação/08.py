@@ -17,16 +17,18 @@ else:
     print('Foram lidas {0} notas.'.format(len(valor))) 
     print('Os dados inseridos foram: {0}'.format(valor)) 
     print('De trás para frente, os dados inseridos foram:')
-    for dados in reversed(valor):
-        print(dados)                                        
+    valor.reverse()
+    for dados in valor:
+        print(dados)     
+                                           
     print('A soma dos valores é: {0}'.format(soma))
 
     media=soma/len(valor)
     print('A média das notas é {0:.2f}'.format(media))
 
     for dados in range(len(valor)):
-        teste = valor.pop(-1)
-        if teste>media:
+        numero = valor.pop(-1)
+        if numero>media:
             cont_val_acima+=1
     print('{0} valores são maiores que a média'.format(cont_val_acima))
 
