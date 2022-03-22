@@ -1,40 +1,25 @@
-salarios=[[200,299],[300,399],[400,499],[500,599],[600,699],[700,799],[800,899],[900,999],[1000,99999]]
-armsalario=[]
-contloop=0
-cont200=0
-cont300=0
-cont400=0
-cont500=0
-cont600=0
-cont700=0
-cont800=0
-cont900=0
-cont1000=0
+salarios=[]
+cont_intervalos=[0]*9
+while True:
+    vendasB=float(input('Informe o valor de vendas brutas: R$'))
+    salarios.append(float(vendasB*0.09)+200)
+    res=str(input('Inserir outro valor?[S/N]'))
 
-while contloop!=(-1):
-    vendas=float(input('Informe o valor das vendas brutas(Caso o valor seja 0, o programa termina.): R$'))
-    salario=200+(vendas*0.09)
-    armsalario.append(salario)
-    print('Existem {0} índices em "vendas"'.format(len(salarios)))
-    print('Existem {0} índices em "armsalário"'.format(len(armsalario)))
-
-    if vendas == (0):
-        for armsalario[:] in salarios[0[:]]:
-            cont200+=1
-        for armsalario[:] in salarios[1[:]]:
-            cont300+=1
-        for armsalario[:] in salarios[2[:]]:
-            cont400+=1
-        for armsalario[:] in salarios[3[:]]:
-            cont500+=1
-        for armsalario[:] in salarios[4[:]]:
-            cont600+=1
-        for armsalario[:] in salarios[5[:]]:
-            cont700+=1
-        for armsalario[:] in salarios[6[:]]:
-            cont800+=1
-        for armsalario[:] in salarios[7[:]]:
-            cont900+=1
-        for armsalario[:] in salarios[8[:]]:
-            cont1000+=1
+    if res in 'Nn':
         break
+
+for salario in salarios:
+    ind = int((salario-200)/100)
+    ind_max=len(cont_intervalos)-1
+    ind = min(ind,ind_max)
+    cont_intervalos[ind]+=1
+    
+print(f'{cont_intervalos[0]} vendedores receberam salário entre R$200 e R$299')
+print(f'{cont_intervalos[1]} vendedores receberam salário entre R$300 e R$299')
+print(f'{cont_intervalos[2]} vendedores receberam salário entre R$400 e R$299')
+print(f'{cont_intervalos[3]} vendedores receberam salário entre R$500 e R$299')
+print(f'{cont_intervalos[4]} vendedores receberam salário entre R$600 e R$299')
+print(f'{cont_intervalos[5]} vendedores receberam salário entre R$700 e R$299')
+print(f'{cont_intervalos[6]} vendedores receberam salário entre R$800 e R$299')
+print(f'{cont_intervalos[7]} vendedores receberam salário entre R$900 e R$299')
+print(f'{cont_intervalos[8]} vendedores receberam salário acima de R$1000')
