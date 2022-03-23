@@ -38,4 +38,3 @@ else:
             cont_val_ab7+=1
     print('{0} valores são menores que 7'.format(cont_val_ab7))
     print('-'*50)
-    
