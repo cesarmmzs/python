@@ -5,7 +5,6 @@ def valorPagamento(a,b):
         val_pagar=(val_pagar+(a*0.03))+(b*0.001)
     
 
-
 def msgfim():
     print('-=-'*10)
     print('      FIM DO PROGRAMA \n CONFIRA O RELATÓRIO ABAIXO:')
@@ -14,8 +13,8 @@ def msgfim():
 
 cont_prest=[]
 val_pagar=soma_prest=0
-while True:
 
+while True:
     val_prest=float(input('Informe o valor da prestação: R$'))
     if val_prest==0:
         break
